@@ -6,16 +6,17 @@
         <label for="name">Name
           <input id="name" name="name" type="text" formControlName="name">
         </label>
-        <div class="alert" *ngIf="!rForm.controls['name'].invalid && !rForm.controls['name'].touched">This is required
+        <div class="alert" *ngIf="!rForm.controls['name'].valid && !rForm.controls['name'].touched">
+          {{titleAlert}}
         </div>
 
         <label for="description">Description
           <textarea id="description" name="description" formControlName="description" id="" cols="30"
                     rows="10"></textarea>
         </label>
-        <div class="alert" *ngIf="!rForm.controls['description'].valid && !rForm.controls['description'].touched">This
-          is
-          required
+        <div class="alert"
+             *ngIf="!rForm.controls['description'].valid && !rForm.controls['description'].touched">
+          This field need to be 30 to 500 characters in length
         </div>
 
         <label for="validate">Minimum of 3 Characters</label>
